@@ -1,0 +1,16 @@
+name: Build PocketCHIP Armbian Image
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # ubuntu-24.04-arm, ubuntu-24.04-riscv
+    steps:
+      - uses: armbian/build@main
+        with:
+          armbian_token: ${{ secrets.GITHUB_TOKEN }}
+          armbian_board: "pocketchip-sd" # orangepi5 bananapif3
+          armbian_release: "noble" # trixie
+          armbian_target: "build"
+          armbian_ui: "minimal" # server xfce
+          armbian_runner_clean: "yes" # recommended for Github runners
