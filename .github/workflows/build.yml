@@ -14,3 +14,4 @@ jobs:
           armbian_target: "kernel"
           armbian_ui: "minimal" # server xfce
           armbian_runner_clean: "yes" # recommended for Github runners
+          armbian_artifacts: "build/output/packages-hashed/"
