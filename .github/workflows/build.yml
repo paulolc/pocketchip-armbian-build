@@ -6,6 +6,10 @@ jobs:
   build:
     runs-on: ubuntu-latest # ubuntu-24.04-arm, ubuntu-24.04-riscv
     steps:
+      - name: Set current date
+        id: date
+        run: echo "today=$(date +'%Y.%m.%d-%H%M')" >> $GITHUB_OUTPUT
+        
       - uses: armbian/build@main
         with:
           armbian_token: ${{ secrets.BUILD_TOKEN }}
@@ -14,5 +18,5 @@ jobs:
           armbian_target: "build"
           armbian_ui: "minimal" # server xfce
           armbian_runner_clean: "yes" # recommended for Github runners
-          armbian_release_title: "v`date +'%Y.%m.%d-%4N'`"
+          armbian_release_title: ${{ steps.date.outputs.today }}
           
