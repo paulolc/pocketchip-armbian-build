@@ -11,7 +11,8 @@ jobs:
           armbian_token: ${{ secrets.BUILD_TOKEN }}
           armbian_board: "pocketchip-sd" # orangepi5 bananapif3
           armbian_release: "noble" # trixie
-          armbian_target: "kernel"
+          armbian_target: "build"
           armbian_ui: "minimal" # server xfce
           armbian_runner_clean: "yes" # recommended for Github runners
-          armbian_artifacts: "/armbian/output/packages-hashed/*.tar"
+          armbian_release_title: "v`date +'%Y.%m.%d-%4N'`"
+          
