@@ -15,7 +15,7 @@ jobs:
           armbian_token: ${{ secrets.BUILD_TOKEN }}
           armbian_board: "pocketchip" 
           armbian_release: "noble" # trixie
-          armbian_target: "build"
+          armbian_target: "build pocketchip"
           armbian_ui: "minimal" # server xfce
           armbian_runner_clean: "yes" # recommended for Github runners
           armbian_release_title: ${{ steps.date.outputs.today }}
