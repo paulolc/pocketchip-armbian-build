@@ -13,7 +13,7 @@ jobs:
       - uses: armbian/build@main
         with:
           armbian_token: ${{ secrets.BUILD_TOKEN }}
-          armbian_board: "pocketchip" 
+          armbian_board: "pocketchip-sd" 
           armbian_release: "noble" # trixie
           armbian_target: "build pocketchip"
           armbian_ui: "minimal" # server xfce
