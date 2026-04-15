@@ -19,4 +19,4 @@ jobs:
           armbian_ui: "minimal" # server xfce
           armbian_runner_clean: "yes" # recommended for Github runners
           armbian_release_title: ${{ steps.date.outputs.today }}
-		  armbian_extensions: "preset-firstrun"          
+          armbian_extensions: "preset-firstrun"          
