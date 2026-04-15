@@ -10,7 +10,7 @@ jobs:
         id: date
         run: echo "today=$(date +'%Y.%m.%d-%H%M')" >> $GITHUB_OUTPUT
         
-      - uses: armbian/build@main
+      - uses: paulolc/pocketchip-armbian-build@main
         with:
           armbian_token: ${{ secrets.BUILD_TOKEN }}
           armbian_board: "pocketchip" 
