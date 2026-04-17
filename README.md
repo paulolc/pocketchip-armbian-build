@@ -1,8 +1,8 @@
 # Reproducible Armbian Unnoficial Builds for the PocketC.H.I.P
 
-Trying to recover PocketCHIP's former glory with more recent software in reproducible way.
+Trying to recover PocketCHIP's former glory with more recent software in reproducible way. (based on [The Armbian Linux Build Framework](https://docs.armbian.com/Developer-Guide_Overview/) )
 
-⚠️ WORK IN PROGRESS! ⚠️ 
+⚠️ WORK IN PROGRESS! ⚠️ - These builds are for Linux enthusiasts only and not yet ready for end-users. Not everything is working and what seems to be working may not be stable so, watch your step. You've been warned.
 
 Currently the build is an amalgamation of crude hacks and is not running in a armbian "idiomatic" way but it is "working on my machine"™️. Meaning it boots and does a few things...
 
