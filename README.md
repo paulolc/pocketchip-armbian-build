@@ -1,77 +1,33 @@
-<h3 align="center">
-  <a href=#><img src="https://raw.githubusercontent.com/armbian/.github/master/profile/logosmall.png" alt="Armbian logo"></a>
-  <br><br>
-</h3>
+# Reproducible Armbian Unnoficial Builds for the PocketC.H.I.P
 
-## Purpose of This Repository
+Trying to recover PocketCHIP's former glory with more recent software in reproducible way.
 
-The **Armbian Linux Build Framework** creates customizable OS images based on **Debian** or **Ubuntu** for **single-board computers (SBCs)** and embedded devices.
+⚠️ WORK IN PROGRESS! ⚠️ 
 
-It builds a complete Linux system including kernel, bootloader, and root filesystem, giving you control over versions, configuration, firmware, device trees, and system optimizations.
+Currently the build is an amalgamation of crude hacks and is not running in a armbian "idiomatic" way but it is "working on my machine"™️. Meaning it boots and does a few things...
 
-The framework supports **native**, **cross**, and **containerized** builds for multiple architectures (`x86_64`, `aarch64`, `armhf`, `riscv64`) and is suitable for development, testing, production, or automation.
+The latest release build should work and the .swu image should be flashable via [Macromorgan's SWUpdate based flashing method](
+https://www.reddit.com/r/ChipCommunity/comments/t4k67u/my_attempt_at_a_new_method_of_flashing/)
 
-> **Looking for prebuilt images?** Use [Armbian Imager](https://github.com/armbian/imager/releases) — the easiest way to download and flash Armbian to your SD card or USB drive. Available for Linux, macOS, and Windows.
+# Tested so far
 
-## Quick Start
+TESTED (Debian 13 + linux 6.18.x):
+✅- UART Serial output
+✅- Booting linux 6.18.x 
+✅- usb ethernet networking (g_ether)
+✅- apt install
+✅- NAND 
+✅- VT consoles / Console output on screen (no keyboard)
+✅- Poweroff OK = not hanging or crashing at poweroff
+✅- X windows 
+✅- Login/Shell on VT terminal on UART Serial
+✅- Onboard Keyboard
+✅- Onboard Keyboard - X11
+✅- Onboard Keyboard - Screen console (VT terminal) 
+✅- Key modes (shift, caps, screen lock, etc)
+✅- Wifi driver (systemd-networkd)
 
-```bash
-git clone https://github.com/armbian/build
-cd build
-./compile.sh
-```
-
-<a href="#how-to-build-an-image-or-a-kernel"><img src=".github/README.gif" alt="Build demonstration" width="100%"></a>
-
-## Build Host Requirements
-
-### Hardware
-- **RAM:** ≥8GB (less with `KERNEL_BTF=no`)
-- **Disk:** ~50GB free space
-- **Architecture:** x86_64, aarch64, or riscv64
-
-### Operating System
-- **Native builds:** Armbian or Ubuntu 24.04 (Noble)
-- **Containerized:** Any Docker-capable Linux
-- **Windows:** WSL2 with Armbian/Ubuntu 24.04
-
-### Software
-- Superuser privileges (`sudo` or root)
-- Up-to-date system (outdated Docker or other tools can cause failures)
-
-## Resources
-
-- **[Documentation](https://docs.armbian.com/Developer-Guide_Overview/)** — Comprehensive guides for building, configuring, and customizing
-- **[Website](https://www.armbian.com)** — News, features, and board information
-- **[Blog](https://blog.armbian.com)** — Development updates and technical articles
-- **[Forums](https://forum.armbian.com)** — Community support and discussions
-
-## Contributing
-
-We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on reporting issues, submitting changes, and contributing code.
-
-## Support
-
-### Community Forums
-Get help from users and contributors on troubleshooting, configuration, and development.
-👉 [forum.armbian.com](https://forum.armbian.com)
-
-### Real-time Chat
-Join discussions with developers and community members on IRC or Discord.
-👉 [Community Chat](https://docs.armbian.com/Community_IRC/)
-
-### Paid Consultation
-For commercial projects, guaranteed response times, or advanced needs, paid support is available from Armbian maintainers.
-👉 [Contact us](https://www.armbian.com/contact)
-
-## Contributors
-
-Thank you to everyone who has contributed to Armbian!
-
-<a href="https://github.com/armbian/build/graphs/contributors">
-  <img alt="Contributors" src="https://contrib.rocks/image?repo=armbian/build" />
-</a>
-
-## Armbian Partners
-
-Our [partnership program](https://forum.armbian.com/subscriptions) supports Armbian's development and community. Learn more about [our Partners](https://armbian.com/partners).
+TESTED and not working:
+❌- All output to UART Serial
+❌- Touchscreen
+❌- GPU Acceleration - Mali GPU (test w/ es2gears/glxinfo from mesa-utils-extra)
