@@ -1,0 +1,55 @@
+default partial alphanumeric_keys
+xkb_symbols "basic" {
+
+    name[Group1]= "PocketCHIP Custom Layout";
+
+    // 1. Include the base US layout mappings for all unmodified keys
+    include "us(basic)"
+
+    // 2. Explicitly make Right Alt act as the Level 3 shift chooser
+    include "level3(ralt_switch)"
+
+    // Standard alphanumeric definitions mapped by keycode equivalents
+    key <AE01> { [         1,      exclam,          F1,      exclam ] };
+    key <AE02> { [         2,          at,          F2,          at ] };
+    key <AE03> { [         3,  numbersign,          F3,  numbersign ] };
+    key <AE04> { [         4,      dollar,          F4,      dollar ] };
+    key <AE05> { [         5,     percent,          F5,     percent ] };
+    key <AE06> { [         6, asciicircum,          F6, asciicircum ] };
+    key <AE07> { [         7,   ampersand,          F7,   ampersand ] };
+    key <AE08> { [         8,    asterisk,          F8,    asterisk ] };
+    key <AE09> { [         9,   parenleft,          F9,   parenleft ] };
+    key <AE10> { [         0,  parenright,         F10,  parenright ] };
+    
+    key <BKSP> { [ BackSpace,   BackSpace,   KP_Delete,   BackSpace ] };
+    key <AD06> { [         y,           Y,   braceleft,           Y ] };
+    key <AD07> { [         u,           U,  braceright,           U ] };
+    key <AD08> { [         i,           I, bracketleft,           I ] };
+    key <AD09> { [         o,           O, bracketright,           O ] };
+    key <AD10> { [         p,           P,         bar,           P ] };
+    key <RTRN> { [    Return,    NoSymbol,    KP_Enter              ] };
+
+    key <AC06> { [         h,           H,        less,           H ] };
+    key <AC07> { [         j,           J,     greater,           J ] };
+    key <AC08> { [         k,           K,  apostrophe,           K ] };
+    key <AC09> { [         l,           L,    quotedbl,           L ] };
+
+    key <AB05> { [         b,           B,       grave,           b ] };
+    key <AB06> { [         n,           N,  asciitilde,           n ] };
+    key <AB07> { [         m,           M,       colon,           M ] };
+    key <AB08> { [     comma,        less,   semicolon,        less ] };
+    key <AB09> { [    period,       comma,   semicolon,       comma ] };
+    key <AB10> { [     slash,    question,   backslash,    question ] };
+
+    key <KPSU> { [ KP_Subtract, underscore, F11,         KP_Subtract ] };
+    key <KPAD> { [    KP_Add,    KP_Equal,         F12,      KP_Add ] };
+
+    // Explicitly make Right Alt act as the Level 3 shift chooser (replacing Mode_switch)
+    include "level3(ralt_switch)"
+
+    // Direct Arrow Layer modifications via Level 3
+    key <UP>   { [        Up,    NoSymbol,       Prior              ] };
+    key <LEFT> { [      Left,    NoSymbol,        Home              ] };
+    key <RGHT> { [     Right,    NoSymbol,         End              ] };
+    key <DOWN> { [      Down,    NoSymbol,        Next              ] };
+};

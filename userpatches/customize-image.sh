@@ -38,16 +38,15 @@ Main() {
 	esac
 
 	OVERLAY_DIR=/tmp/overlay
-	cp -v $OVERLAY_DIR/modules /etc/initramfs-tools/modules
-	cp -v -r $OVERLAY_DIR/swupdate-gen-image/ /opt/ 
+	( cd $OVERLAY_DIR ; cp -v -rf * / )
 	echo 'extraargs=video=Composite-1:d ubi.mtd=5 cmdlinepart.mtdparts=1c03000.nand-controller:0x400000(SPL)ro,0x400000(SPL.backup)ro,0x400000(U-Boot)ro,0x400000(U-Boot.backup)ro,0x2000000(swupdate)slc,-(rootfs)slc console=ttyS0,115200 splash plymouth.ignore-serial-consoles console=tty1' >> /boot/armbianEnv.txt
-
-	# TODO: generate device tree from source and remove this
-	cp -v $OVERLAY_DIR/sun5i-r8-chip.dtb /boot/dtb/
-
-	# TODO: generate overlay from source and remove this
-	cp -v $OVERLAY_DIR/dip-9d011a-1.dtbo /boot/overlay-user
 	echo 'user_overlays=dip-9d011a-1' >> /boot/armbianEnv.txt
+
+	# TODO: generate device tree from source and copy it to boot directory
+	# cp -v $OVERLAY_DIR/sun5i-r8-chip.dtb /boot/dtb/
+
+	# TODO: generate overlay from source and copy it to boot directory
+	# cp -v $OVERLAY_DIR/dip-9d011a-1.dtbo /boot/overlay-user
 
 } # Main
 
